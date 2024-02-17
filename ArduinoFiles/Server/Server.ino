@@ -4,7 +4,6 @@
 #include "ESPAsyncTCP.h"
 
 // network params
-const char* wifiname = "Intelligent Residence";
 const char* ssid = "IntelligentResidence";
 const char* password = "asdfasdfasdf";
 
@@ -16,8 +15,6 @@ String testRequest();
 void setup() 
 {
   Serial.begin(115200);
-  
-  WiFi.hostname(wifiname);
 
   WiFi.softAP(ssid, password);
 
