@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<body copyright="All data copyright Toronto Transit Commission 2024.">
+<predictions agencyTitle="Toronto Transit Commission" routeTitle="306-Carlton" routeTag="306" stopTitle="College St At Brock Ave" stopTag="1690" dirTitleBecauseNoPredictions="East - 306 Carlton towards Main Street Station">
+</predictions>
+<predictions agencyTitle="Toronto Transit Commission" routeTitle="506-Carlton" routeTag="506" stopTitle="College St At Brock Ave" stopTag="1690">
+  <direction title="East - 506 Carlton towards Main Street Station">
+  <prediction epochTime="1708200652738" seconds="92" minutes="1" isDeparture="false" branch="506" dirTag="506_0_506" vehicle="4559" block="506_9_90" tripTag="46849364" />
+  <prediction epochTime="1708201088016" seconds="527" minutes="8" isDeparture="false" affectedByLayover="true" branch="506" dirTag="506_0_506" vehicle="4461" block="506_10_100" tripTag="46849363" />
+  <prediction epochTime="1708201319684" seconds="759" minutes="12" isDeparture="false" affectedByLayover="true" branch="506" dirTag="506_0_506" vehicle="4485" block="506_11_110" tripTag="46849362" />
+  <prediction epochTime="1708202399684" seconds="1839" minutes="30" isDeparture="false" affectedByLayover="true" branch="506" dirTag="506_0_506" vehicle="4508" block="506_13_132" tripTag="46849360" />
+  <prediction epochTime="1708202939684" seconds="2379" minutes="39" isDeparture="false" affectedByLayover="true" branch="506" dirTag="506_0_506" vehicle="4551" block="506_14_140" tripTag="46849359" />
+  </direction>
+</predictions>
+</body>
