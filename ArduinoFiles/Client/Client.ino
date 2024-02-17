@@ -9,21 +9,22 @@ ESP8266WiFiMulti WiFiMulti;
 
 // network params
 const char* ssid = "IntelligentResidence";
-const char* password = "asdf";
+const char* password = "asdfasdfasdf";
 
-const char* serverNameTemp = "http://192.168.4.1/temperature";
-const char* serverNameHumi = "http://192.168.4.1/humidity";
-const char* serverNamePres = "http://192.168.4.1/pressure";
+const char* testURL = "http://192.168.4.1/test";
 
 void setup() {
   Serial.begin(115200);
   Serial.println();
 
   // attempt to connect
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-  }
+  // WiFi.begin(ssid, password);
+  // while (WiFi.status() != WL_CONNECTED) {
+  //   delay(500);
+  // }
+
+  WiFi.mode(WIFI_STA);
+  WiFiMulti.addAP(ssid, password);
 
   Serial.println("Success");
 }
@@ -34,7 +35,9 @@ void loop()
   if ((WiFiMulti.run() == WL_CONNECTED)) 
   {
     // send GET requests
-    
+    String result = httpGETReq(testURL);
+
+    // do something with result
   }
   else 
   {
@@ -44,7 +47,7 @@ void loop()
   Delay(5000);
 }
 
-String httpGETRequest(const char* url) {
+String httpGETReq(const char* url) {
   WiFiClient client;
   HTTPClient http;
   String payload; 
