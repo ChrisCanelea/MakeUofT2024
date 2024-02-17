@@ -12,5 +12,6 @@ class BusHandler(xml.sax.ContentHandler):
     #define an element that triggers read
     def startElement(self, name, attrs):
         self.current = name
+        
 
 
