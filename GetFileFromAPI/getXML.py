@@ -10,7 +10,7 @@ def download_xml(url):
 
     # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        # Get the content of the response (the XML file)
+
         xml_content = response.content
 
         # Create the folder if it doesn't exist
@@ -27,10 +27,9 @@ def download_xml(url):
         print(f"Failed to download XML file. Status code: {response.status_code}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python script.py <URL> <folder_path>")
+    if len(sys.argv) != 2:
+        print("Usage: python getXML.py")
         sys.exit(1)
     
     url = sys.argv[1]
-    folder_path = sys.argv[2]
-    download_xml(url, folder_path)
+    download_xml(url)

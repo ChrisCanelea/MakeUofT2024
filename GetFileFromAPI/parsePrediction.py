@@ -12,9 +12,3 @@ for prediction in predictions:
     sec = prediction.getAttribute('seconds')
     min = prediction.getAttribute('minutes')
     print(f"epochTime: {epochTime}, min: {min}, sec: {sec}")
-
-
-
-
-
-
