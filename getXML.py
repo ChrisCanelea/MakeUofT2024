@@ -1,0 +1,36 @@
+import os
+import sys
+import requests
+
+def download_xml(url):
+    # Send an HTTP GET request to the URL
+    response = requests.get(url)
+
+    folder_path = './xml_files'
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Get the content of the response (the XML file)
+        xml_content = response.content
+
+        # Create the folder if it doesn't exist
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+        # Save the XML content to a file in the specified folder
+        with open(os.path.join(folder_path, 'example.xml'), 'wb') as f:
+            f.write(xml_content)
+            
+        print("XML file downloaded successfully.")
+    else:
+        # If the request was not successful, print the status code
+        print(f"Failed to download XML file. Status code: {response.status_code}")
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <URL> <folder_path>")
+        sys.exit(1)
+    
+    url = sys.argv[1]
+    folder_path = sys.argv[2]
+    download_xml(url, folder_path)
