@@ -2,8 +2,10 @@ import os
 import sys
 import requests
 
-def download_xml(url):
+def download_xml(stopID):
     # Send an HTTP GET request to the URL
+    body = 'https://retro.umoiq.com/service/publicXMLFeed?command=predictions&a=ttc&stopId='
+    url = body+stopID
     response = requests.get(url)
 
     folder_path = './xml_files'
@@ -18,7 +20,7 @@ def download_xml(url):
             os.makedirs(folder_path)
 
         # Save the XML content to a file in the specified folder
-        with open(os.path.join(folder_path, 'example.xml'), 'wb') as f:
+        with open(os.path.join(folder_path, 'stopPrediction.xml'), 'wb') as f:
             f.write(xml_content)
             
         print("XML file downloaded successfully.")
@@ -28,8 +30,8 @@ def download_xml(url):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python getXML.py")
+        print("Usage: python3 getXML.py <stopID>")
         sys.exit(1)
     
-    url = sys.argv[1]
-    download_xml(url)
+    stopID = sys.argv[1]
+    download_xml(stopID)
