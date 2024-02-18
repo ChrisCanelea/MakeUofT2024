@@ -1,12 +1,14 @@
 import xml.dom.minidom
 import sys
 import subprocess
+import requests
+import os
 
 # https://retro.umoiq.com/xmlFeedDocs/NextBusXMLFeed.pdf
 
 #this function parse the xml file and output the schedule
 def outSchedule():
-    domtree = xml.dom.minidom.parse('./xml_files/busPrediction.xml')
+    domtree = xml.dom.minidom.parse('./xml_files/stopPrediction.xml')
     group = domtree.documentElement
     predictions = group.getElementsByTagName('prediction')
 
