@@ -61,9 +61,8 @@ def checkBusId(busID):
             break
 
     # if the bus id is valid, get bus stop from API 
-    #debug commented out
-    # if idIsValid:
-    #     getBusStations(busID)
+    if idIsValid:
+        getBusStations(busID)
 
     #if not, return error
     else:

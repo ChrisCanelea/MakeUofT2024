@@ -67,6 +67,5 @@ if __name__ == "__main__":
     stationName = sys.argv[1]
 
     stopId = getStationId(stationName)
-    #debug commented out
-    #getPrediction(stopId)
+    getPrediction(stopId)
     outSchedule()
