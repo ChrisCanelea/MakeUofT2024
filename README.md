@@ -1,3 +1,11 @@
+# MakeUofT 2024 - Team Threeaky Friday
+
+Save time in the morning by being notified live of transit windows for your morning commutes, with optional connections for other peripheral devices and funtionalities, all in one place.
+
+Uses a Raspberry Pi as a main terminal and an ESP8266 connected serially to a database as a server/access point. Terminal as well as other devices can connect to the local access point and sent requests/queries to the server/database to retreive information or perform useful actions.
+
+Find it on the devpost here: https://devpost.com/software/intelligent-residence
+
 ## Inspiration
 Mornings can be rough at times, with you rushing to get out the door on time, even skipping breakfast if needed, only to get to your bus stop and end up waiting half an hour anyways due to delays. This frustrating situation is our motivation for the creation of the Intelligent Residence system, a smart home appliance that aims to save as much of your time as possible.
 
