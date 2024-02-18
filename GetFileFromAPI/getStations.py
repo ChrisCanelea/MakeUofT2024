@@ -58,8 +58,10 @@ def checkBusId(busID):
             break
 
     # if the bus id is valid, get bus stop from API 
-    if idIsValid:
-        getBusStations(busID)
+    #debug commented out
+    # if idIsValid:
+    #     getBusStations(busID)
+
     #if not, return error
     else:
         print("Bus ID is not valid")
