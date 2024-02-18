@@ -1,11 +1,3 @@
-# MakeUofT 2024 - Team Threeaky Friday
-
-Save time in the morning by being notified live of transit windows for your morning commutes, with optional connections for other peripheral devices and funtionalities, all in one place.
-
-Uses a Raspberry Pi as a main terminal and an ESP8266 connected serially to a database as a server/access point. Terminal as well as other devices can connect to the local access point and sent requests/queries to the server/database to retreive information or perform useful actions.
-
-Find it on the devpost here: https://devpost.com/software/intelligent-residence
-
 ## Inspiration
 Mornings can be rough at times, with you rushing to get out the door on time, even skipping breakfast if needed, only to get to your bus stop and end up waiting half an hour anyways due to delays. This frustrating situation is our motivation for the creation of the Intelligent Residence system, a smart home appliance that aims to save as much of your time as possible.
 
@@ -27,7 +19,7 @@ The group takes great pride in presenting a design that not only encompasses all
 The design journey has fostered personal growth among every team member. Whether it involved mastering UI design and server communication in a new language like Python, constructing a server that facilitates WIFI communication for wireless interactions, or delving into Extract, Transform, and Load (ETL) processes from a public API, each team member has experienced significant learning and development. 
 
 ## What's next for Intelligent Residence
-Since the server is already set up asynchronously, it lets us add new clients and send requests whenever we want. This means our design is scalable with all kinds of other appliances, a few of which we already planned and either implemented partially or failed to implement in time. These were ideas such as:
+Our first order of business would be to add live arrival times of other transit modes such as the TTC subway and the GO train. Furthermore, since the server is already set up asynchronously, it lets us add new clients and send requests whenever we want. This means our design is scalable with all kinds of other appliances, a few of which we already planned and either implemented partially or failed to implement in time. The placeholders "App 2" and "App 3" were in preparation for these other appliances. These were ideas such as:
 - The power saver / appliance toggle: Turns off appliances that are left on from the press of a button
 - The shopping list: An interface in the kitchen to add items to a shopping list in the moment with ease
 - The outlet tracker: A device to track the battery levels of devices plugged into the wall, unplugging them close to full charge and reporting when you forgot to charge a device
