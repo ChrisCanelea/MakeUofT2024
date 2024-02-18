@@ -39,7 +39,7 @@ def getBusStops(busID):
         with open(os.path.join(folder_path, 'busStopLUT.xml'), 'wb') as f:
             f.write(xml_content)
             
-        print("XML file downloaded successfully.")
+        #print("XML file downloaded successfully.")
     else:
         # If the request was not successful, print the status code
         print(f"Failed to download XML file. Status code: {response.status_code}")
@@ -78,8 +78,6 @@ def getStationId(stationName):
         title = stop.getAttribute('title')
         tag = stop.getAttribute('tag')
         if stationName == title and tag[-3:]!="_ar":
-            print(f"tag: {stop.getAttribute('tag')}")
-            print(f"stopId: {stop.getAttribute('stopId')}")
             return stop.getAttribute('stopId')
     
     print("No station match")
@@ -106,7 +104,7 @@ def getPrediction(stopID):
         with open(os.path.join(folder_path, 'stopPrediction.xml'), 'wb') as f:
             f.write(xml_content)
             
-        print("XML file downloaded successfully.")
+        #print("XML file downloaded successfully.")
     else:
         # If the request was not successful, print the status code
         print(f"Failed to download XML file. Status code: {response.status_code}")
