@@ -1,6 +1,7 @@
 # Skeleton code for receiving Serial input
 import serial
 import time
+import subprocess
 
 server = serial.Serial('COM7', 115200, timeout=.1)
 
@@ -22,8 +23,14 @@ while True:
     data = data.decode('utf-8')
 
     if data[0] == "/": # got key
-        print("SUCCESS")
+        
+        # "/45:111 Disco Rd\r\n"
+
+        substrings = data[1:-2].split(":")
+        print(substrings)
+
         # parse data string and get arrival/departure time of next bus
+        subprocess.run(["python3","./GetFileFromAPI/getSchedule.py",substrings[0],substrings[1]])
 
         server.write(b'Success') # send result back to server
     
