@@ -7,10 +7,12 @@ BASE_URL = "http://192.168.4.1/"
 route_num = 7
 start_location = "1138 Bathurst St"
 
-substrings = {}
+substrings = ['0', '0', '0']
 
 class MainWindow(QMainWindow):
     def __init__(self):
+        global substrings
+
         super().__init__()
         self.setWindowTitle('Smart Home App')
         self.resize(800, 480)
@@ -57,15 +59,20 @@ class MainWindow(QMainWindow):
         # Create the screen for option 1
         option1_screen = QWidget()
         option1_layout = QVBoxLayout(option1_screen)
-        option1_label = QLabel('Option 1 Screen')
+
         back_button = QPushButton('↩')
         back_button.setStyleSheet('font-size: 24pt; padding: 10px; border: none; background-color: transparent;')
         back_button.setFixedSize(50, 50)
         back_button.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
         back_button.clicked.connect(lambda: self.stacked_widget.setCurrentIndex(0))  # Switch to home screen
-        
+
+        # Info
+        minutes_label = QLabel("Minutes: " + str(int(int(substrings[0]) / 60)))
+        seconds_label = QLabel("Seconds: " + str(int(substrings[0]) % 60))
+
         option1_layout.addWidget(back_button, alignment=Qt.AlignTop | Qt.AlignLeft)  # Align button to top-left
-        option1_layout.addWidget(option1_label)
+        option1_layout.addWidget(minutes_label)
+        option1_layout.addWidget(seconds_label)
         option1_screen.setLayout(option1_layout)
         self.stacked_widget.addWidget(option1_screen)
 
@@ -87,6 +94,7 @@ class MainWindow(QMainWindow):
     
     def update_time(self):
         global substrings
+
         current_time = QTime.currentTime()
         display_text = current_time.toString('hh:mm:ss')
         self.time_label.setText(display_text)
@@ -109,7 +117,7 @@ class MainWindow(QMainWindow):
 
             print("minutes: " + str(int(int(substrings[0]) / 60)))
             print("seconds: " + str(int(substrings[0]) % 60))
-            print(substrings[0])
+            print(substrings)
 
 def main():
     app = QApplication(sys.argv)
