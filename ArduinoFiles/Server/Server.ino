@@ -7,11 +7,15 @@
 const char* ssid = "IntelligentResidence";
 const char* password = "asdfasdfasdf";
 
-// global string for getting time data from database
-String result;
+String result; // global string for getting time data from database
 
 // create http server on port 80
 AsyncWebServer server(80);
+
+// Helper declaration
+String toggleAppliances();
+String outletStatus();
+void decodeRequest(AsyncWebServerRequest *request);
 
 void setup() 
 {
@@ -27,6 +31,24 @@ void setup()
   Serial.println(IP);
 
   // Handlers
+
+  // handler for testing another ESP8266 device as a client
+  server.on("/test", HTTP_GET, [](AsyncWebServerRequest *request){
+    // send basic string response
+    request->send(200, "text/plain", "YIPPIE");
+  });
+
+  // handler for toggling appliances
+  server.on("/appliances", HTTP_GET, [](AsyncWebServerRequest *request){
+    // ack from appliance helper
+    request->send(200, "text/plain", toggleApplianes());
+  });
+
+  // handler for the main terminal to get outlet status
+  server.on("/update-outlets", HTTP_GET, [](AsyncWebServerRequest *request){
+    // send outlet status from helper in form "<OUTL1status>:<OUTL2status>:<OUTL3Status>"
+    request->send(200, "text/plain", outletStatus());
+  });
 
   // handler for getting the result of a query
   server.on("/result", HTTP_GET, [](AsyncWebServerRequest *request){
@@ -59,4 +81,20 @@ void decodeRequest(AsyncWebServerRequest *request)
 
   // rudimentary ACK
   request->send(200, "text/plain", "Received");
+}
+
+// function for toggling home appliances, modelled by LED on GPIO pins
+String toggleAppliances() 
+{
+  // TODO: GPIO stuff with LED
+
+  return "ACK";
+}
+
+// function for returning outlet statuses
+String outletStatus()
+{
+  // TODO: GPIO with 3 state switch
+
+  
 }
