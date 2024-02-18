@@ -17,18 +17,27 @@ while True:
     # check for our header of "/" (ASCII 47), otherwise ignore
     if data[0] != 47:
         continue
-    
+
     data = data.decode('utf-8') # decode from serial (decode ASCII)
         
-    # Example decoded string: "/7:1138 Bathurst St\r\n"
+    if data[1] == "+": # route number query in form "/+<number>\r\n"
+        route = int(data[1:-2]) # discard first char, last 2 char, and split on ":"
+        print(str(route)) # debug print query
 
-    substrings = data[1:-2].split(":") # discard first char, last 2 char, and split on ":"
-    print(substrings) # debug print query
+        # pass route number to data script
+        # returns list of bus stations (stops) for a given route
+        station_list = subprocess.check_output(["python","getSchedule.py",route])
 
-    # parse data string and get arrival/departure time of next bus
-    output = subprocess.check_output(["python","getSchedule.py",substrings[0],substrings[1]])
-
-    print(output.decode('utf-8')) # debug print result of "getSchedule.py" script
-
-    server.write(output) # send result back to server
+        print(station_list.decode('utf-8')) # debug print result of route number query
+        server.write(station_list) # send station list result back to server
     
+    elif data[1] == "-": # station name query in form "/-<station name>\r\n"
+        station = data[1:-2] # discard first char, last 2 char
+        print(station) # debug print query
+
+        # pass station name to data script
+        # returns bus times for previously queried route #
+        bus_times = subprocess.check_output(["python","getStations.py",station])
+
+        print(bus_times.decode('utf-8')) # debug print result of station name query
+        server.write(bus_times) # send time result back to server
