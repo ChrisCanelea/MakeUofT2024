@@ -13,10 +13,10 @@ def outSchedule():
     predictions = group.getElementsByTagName('prediction')
 
     for prediction in predictions:
-        epochTime = prediction.getAttribute('epochTime')
+        # epochTime = prediction.getAttribute('epochTime')
+        # min = prediction.getAttribute('minutes')
         sec = prediction.getAttribute('seconds')
-        min = prediction.getAttribute('minutes')
-        print(f"epochTime: {epochTime}, min: {min}, sec: {sec}")
+        print(f"{sec}")
 
 
 def getBusStops(busID):
