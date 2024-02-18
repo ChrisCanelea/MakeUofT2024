@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?> 
 <body copyright="All data copyright Toronto Transit Commission 2024.">
-<predictions agencyTitle="Toronto Transit Commission" routeTitle="506-Carlton" routeTag="506" stopTitle="High Park Loop" stopTag="5292">
-  <direction title="West - 506 Carlton towards High Park">
-  <prediction epochTime="1708217607870" seconds="887" minutes="14" isDeparture="false" branch="506" dirTag="506_1_506" vehicle="4481" block="506_3_30" tripTag="46849487" />
-  <prediction epochTime="1708218170472" seconds="1450" minutes="24" isDeparture="false" branch="506" dirTag="506_1_506" vehicle="4482" block="506_4_40" tripTag="46849522" />
-  <prediction epochTime="1708218575352" seconds="1855" minutes="30" isDeparture="false" branch="506" dirTag="506_1_506" vehicle="4490" block="506_5_50" tripTag="46849521" />
-  <prediction epochTime="1708219150336" seconds="2430" minutes="40" isDeparture="false" branch="506" dirTag="506_1_506" vehicle="4603" block="506_7_70" tripTag="46849520" />
-  <prediction epochTime="1708220118765" seconds="3398" minutes="56" isDeparture="false" branch="506" dirTag="506_1_506" vehicle="4559" block="506_9_90" tripTag="46849519" />
-  </direction>
-</predictions>
+<Error shouldRetry="false">
+  stopId "" is not a valid stop id integer
+</Error>
 </body>
