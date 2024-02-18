@@ -28,24 +28,13 @@ void setup()
 
   // Handlers
 
-  // test handler, does nothing really
-  server.on("/test", HTTP_GET, [](AsyncWebServerRequest *request){
-    request->send(200, "text/plain", testRequest());
-  });
-
-  // handler for returning a list of all stations
-  server.on("/stations", HTTP_GET, [](AsyncWebServerRequest *request){
-    // send stations list
-    request->send(200, "text/plain", testRequest());
-  });
-
-  // handler for returning the time returned by the database, updated on time query
-  server.on("/time", HTTP_GET, [](AsyncWebServerRequest *request){
-    // send received time (received in main loop through serial connection to pc)
+  // handler for getting the result of a query
+  server.on("/result", HTTP_GET, [](AsyncWebServerRequest *request){
+    // send received string (received in main loop through serial connection to pc)
     request->send(200, "text/plain", result);
   });
   
-  // notfound handler used for time query
+  // notfound handler used for a query
   server.onNotFound(decodeRequest);
 
   // end setup
@@ -60,12 +49,6 @@ void loop()
     // read the incoming string from database
     result = Serial.readString();
   }
-}
-
-// test function for http get requests, no longer used
-String testRequest() 
-{
-  return "YIPPIE";
 }
 
 // function for handling time queries, called by notfound handler
