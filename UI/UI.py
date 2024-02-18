@@ -67,12 +67,12 @@ class MainWindow(QMainWindow):
         back_button.clicked.connect(lambda: self.stacked_widget.setCurrentIndex(0))  # Switch to home screen
 
         # Info
-        minutes_label = QLabel("Minutes: " + str(int(int(substrings[0]) / 60)))
-        seconds_label = QLabel("Seconds: " + str(int(substrings[0]) % 60))
+        self.minutes_label = QLabel("Minutes: " + str(int(int(substrings[0]) / 60)))
+        self.seconds_label = QLabel("Seconds: " + str(int(substrings[0]) % 60))
 
         option1_layout.addWidget(back_button, alignment=Qt.AlignTop | Qt.AlignLeft)  # Align button to top-left
-        option1_layout.addWidget(minutes_label)
-        option1_layout.addWidget(seconds_label)
+        option1_layout.addWidget(self.minutes_label)
+        option1_layout.addWidget(self.seconds_label)
         option1_screen.setLayout(option1_layout)
         self.stacked_widget.addWidget(option1_screen)
 
@@ -111,7 +111,8 @@ class MainWindow(QMainWindow):
             # minutes_label = QLabel("Minutes: " + str(int(int(substrings[0]) / 60)))
             # seconds_label = QLabel("Seconds: " + str(int(substrings[0]) % 60))
 
-            # option1_layout = self.option1_screen.layout()
+            self.minutes_label.setText("minutes: " + str(int(int(substrings[0]) / 60)))
+            self.seconds_label.setText("seconds: " + str(int(substrings[0]) % 60))
             # option1_layout.addWidget(minutes_label)
             # option1_layout.addWidget(seconds_label)
 
