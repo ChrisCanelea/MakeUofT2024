@@ -24,16 +24,13 @@ while True:
 
     if data[0] == "/": # got key
         
-        # "/45:111 Disco Rd\r\n"
+        # "/7:1138 Bathurst St\r\n"
 
         substrings = data[1:-2].split(":")
         print(substrings)
 
         # parse data string and get arrival/departure time of next bus
-        subprocess.run(["python3","./GetFileFromAPI/getSchedule.py",substrings[0],substrings[1]])
+        subprocess.run(["python","getSchedule.py",substrings[0],substrings[1]])
 
         server.write(b'Success') # send result back to server
-    
-    print(data)
-
     
