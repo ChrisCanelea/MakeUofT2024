@@ -28,6 +28,12 @@ void setup()
 
   // Handlers
 
+  // handler for testing another ESP8266 device as a client
+  server.on("/test", HTTP_GET, [](AsyncWebServerRequest *request){
+    // send basic string response
+    request->send(200, "text/plain", "YIPPIE");
+  });
+
   // handler for getting the result of a query
   server.on("/result", HTTP_GET, [](AsyncWebServerRequest *request){
     // send received string (received in main loop through serial connection to pc)

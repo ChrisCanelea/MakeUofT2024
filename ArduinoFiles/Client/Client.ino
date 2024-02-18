@@ -1,6 +1,3 @@
-// DEPRECIATED - IRRELEVANT
-// NO LONGER USED
-
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266WiFiMulti.h>
@@ -40,14 +37,18 @@ void loop()
     // send GET requests
     String result = httpGETReq(testURL);
 
-    // do something with result
+    if (result != "\0") 
+    {
+      // do something with result
+
+    }
   }
   else 
   {
     Serial.println("WiFi Disconnected");
   }
   
-  Delay(5000);
+  delay(5000);
 }
 
 String httpGETReq(const char* url) {
@@ -61,11 +62,11 @@ String httpGETReq(const char* url) {
     // send http header
     int httpCode = http.GET();
     
-    if (httpResponseCode > 0) 
+    if (httpCode > 0) 
     {
-      Serial.print("HTTP response: ");
-      Serial.println(httpResponseCode);
+      Serial.print("HTTP payload: ");
       payload = http.getString();
+      Serial.println(payload);
     }
     else 
     {
