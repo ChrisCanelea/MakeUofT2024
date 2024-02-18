@@ -1,8 +1,8 @@
 import xml.dom.minidom
 import sys
-import subprocess
 import requests
 import os
+import re
 
 # https://retro.umoiq.com/xmlFeedDocs/NextBusXMLFeed.pdf
 
@@ -76,7 +76,10 @@ def getStationId(stationName):
     #check if busID is in the LUT
     for stop in stops:
         title = stop.getAttribute('title')
-        if stationName == title:
+        tag = stop.getAttribute('tag')
+        if stationName == title and tag[-3:]!="_ar":
+            print(f"tag: {stop.getAttribute('tag')}")
+            print(f"stopId: {stop.getAttribute('stopId')}")
             return stop.getAttribute('stopId')
     
     print("No station match")

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?> 
 <body copyright="All data copyright Toronto Transit Commission 2024.">
-<Error shouldRetry="false">
-  stopId "" is not a valid stop id integer
-</Error>
+<predictions agencyTitle="Toronto Transit Commission" routeTitle="9-Bellamy" routeTag="9" stopTitle="Warden Station" stopTag="14307">
+  <direction title="North - 9 Bellamy towards Scarborough Centre">
+  <prediction epochTime="1708230840000" seconds="1141" minutes="19" isDeparture="true" affectedByLayover="true" branch="9" dirTag="9_1_9" vehicle="8462" block="9_2_20" tripTag="46859172" />
+  <prediction epochTime="1708232520000" seconds="2821" minutes="47" isDeparture="true" affectedByLayover="true" branch="9" dirTag="9_1_9" vehicle="8449" block="9_3_30" tripTag="46859202" />
+  </direction>
+</predictions>
 </body>
