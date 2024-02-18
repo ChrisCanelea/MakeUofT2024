@@ -19,7 +19,7 @@ void decodeRequest(AsyncWebServerRequest *request);
 
 void setup() 
 {
-  Serial.begin(115200);
+  Serial.begin(921600);
   Serial.println("");
 
   // create soft access point
@@ -41,7 +41,7 @@ void setup()
   // handler for toggling appliances
   server.on("/appliances", HTTP_GET, [](AsyncWebServerRequest *request){
     // ack from appliance helper
-    request->send(200, "text/plain", toggleApplianes());
+    request->send(200, "text/plain", toggleAppliances());
   });
 
   // handler for the main terminal to get outlet status
@@ -96,5 +96,5 @@ String outletStatus()
 {
   // TODO: GPIO with 3 state switch
 
-  
+  return "ACK"; // temp
 }

@@ -5,7 +5,7 @@
 import serial
 import subprocess
 
-server = serial.Serial('COM7', 115200, timeout=.1) # open server serial port
+server = serial.Serial('COM7', 921600, timeout=1) # open server serial port
 
 while True:
     data = server.readline() # data in form b'asdsfdgsdgf'
