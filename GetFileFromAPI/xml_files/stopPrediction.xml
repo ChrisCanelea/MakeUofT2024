@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?> 
 <body copyright="All data copyright Toronto Transit Commission 2024.">
-<predictions agencyTitle="Toronto Transit Commission" routeTitle="7-Bathurst" routeTag="7" stopTitle="6101 Bathurst St" stopTag="10065" dirTitleBecauseNoPredictions="North - 7 Bathurst towards Steeles">
+<predictions agencyTitle="Toronto Transit Commission" routeTitle="307-Bathurst Night Bus" routeTag="307" stopTitle="Bathurst St At Wilson Ave South Side" stopTag="9234" dirTitleBecauseNoPredictions="South - 307 Bathurst towards Exhibition">
 </predictions>
-<predictions agencyTitle="Toronto Transit Commission" routeTitle="160-Bathurst North" routeTag="160" stopTitle="6101 Bathurst St" stopTag="10065">
-  <direction title="North - 160 Bathurst North towards Centre Street Extra Fare Required North of Steeles">
-  <prediction epochTime="1708264158791" seconds="2162" minutes="36" isDeparture="false" affectedByLayover="true" branch="160" dirTag="160_1_160" vehicle="7118" block="160_64_10" tripTag="46968425" />
-  <prediction epochTime="1708266318791" seconds="4322" minutes="72" isDeparture="false" affectedByLayover="true" branch="160" dirTag="160_1_160" vehicle="3555" block="160_76_20" tripTag="46968424" />
-  </direction>
-</predictions>
-<predictions agencyTitle="Toronto Transit Commission" routeTitle="307-Bathurst Night Bus" routeTag="307" stopTitle="6101 Bathurst St" stopTag="10065">
-  <direction title="North - 307 Bathurst towards Steeles">
-  <prediction epochTime="1708263081863" seconds="1086" minutes="18" isDeparture="false" branch="307" dirTag="307_1_307" vehicle="8341" block="7_6_60" tripTag="46971387" />
-  <prediction epochTime="1708263099937" seconds="1104" minutes="18" isDeparture="false" branch="307" dirTag="307_1_307" vehicle="8375" block="7_2_20" tripTag="46971385" />
-  <prediction epochTime="1708263262676" seconds="1266" minutes="21" isDeparture="false" branch="307" dirTag="307_1_307" vehicle="7017" block="7_7_70" tripTag="46971386" />
-  <prediction epochTime="1708265070341" seconds="3074" minutes="51" isDeparture="false" branch="307" dirTag="307_1_307" vehicle="3526" block="7_8_80" tripTag="46971384" />
+<predictions agencyTitle="Toronto Transit Commission" routeTitle="7-Bathurst" routeTag="7" stopTitle="Bathurst St At Wilson Ave South Side" stopTag="9234">
+  <direction title="South - 7 Bathurst towards Bathurst Station">
+  <prediction epochTime="1708271439657" seconds="338" minutes="5" isDeparture="false" branch="7" dirTag="7_0_7" vehicle="3526" block="7_8_80" tripTag="46983293" />
+  <prediction epochTime="1708272201652" seconds="1100" minutes="18" isDeparture="false" branch="7" dirTag="7_0_7" vehicle="7080" block="7_73_40" tripTag="46983264" />
+  <prediction epochTime="1708272938263" seconds="1837" minutes="30" isDeparture="false" affectedByLayover="true" branch="7" dirTag="7_0_7" vehicle="7002" block="7_5_50" tripTag="46983263" />
+  <prediction epochTime="1708273538263" seconds="2437" minutes="40" isDeparture="false" affectedByLayover="true" branch="7" dirTag="7_0_7" vehicle="8300" block="7_3_30" tripTag="46983262" />
+  <prediction epochTime="1708274138263" seconds="3037" minutes="50" isDeparture="false" affectedByLayover="true" branch="7" dirTag="7_0_7" vehicle="8388" block="7_10_100" tripTag="46983261" />
   </direction>
 </predictions>
 </body>
