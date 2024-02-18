@@ -13,7 +13,10 @@ def outStation():
 
     for stop in stops:
         stopName = stop.getAttribute('title')
-        print(f"{stopName}")
+        if stopName != "":
+            print(f"{stopName}")
+        else:
+            return
 
 
 def getBusStations(busID):
