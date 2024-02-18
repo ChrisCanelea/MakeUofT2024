@@ -30,7 +30,10 @@ while True:
         print(substrings)
 
         # parse data string and get arrival/departure time of next bus
-        subprocess.run(["python","getSchedule.py",substrings[0],substrings[1]])
+        output = subprocess.check_output(["python","getSchedule.py",substrings[0],substrings[1]])
 
-        server.write(b'Success') # send result back to server
+        # debug print
+        print(output.decode('utf-8'))
+
+        server.write(output) # send result back to server
     

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<body copyright="All data copyright Toronto Transit Commission 2024.">
+<predictions agencyTitle="Toronto Transit Commission" routeTitle="7-Bathurst" routeTag="7" stopTitle="1138 Bathurst St" stopTag="8157">
+  <direction title="South - 7 Bathurst towards Bathurst Station">
+  <prediction epochTime="1708233366053" seconds="44" minutes="0" isDeparture="false" branch="7" dirTag="7_0_7" vehicle="8346" block="7_81_10" tripTag="46854878" />
+  <prediction epochTime="1708233836636" seconds="515" minutes="8" isDeparture="false" branch="7" dirTag="7_0_7" vehicle="8347" block="7_85_90" tripTag="46854877" />
+  <prediction epochTime="1708234781758" seconds="1460" minutes="24" isDeparture="false" branch="7" dirTag="7_0_7" vehicle="7055" block="7_14_140" tripTag="46854876" />
+  <prediction epochTime="1708235883450" seconds="2562" minutes="42" isDeparture="false" affectedByLayover="true" branch="7" dirTag="7_0_7" vehicle="7038" block="7_86_110" tripTag="46854875" />
+  <prediction epochTime="1708236198147" seconds="2877" minutes="47" isDeparture="false" affectedByLayover="true" branch="7" dirTag="7_0_7" vehicle="8353" block="7_84_80" tripTag="46854861" />
+  </direction>
+</predictions>
+<predictions agencyTitle="Toronto Transit Commission" routeTitle="90-Vaughan" routeTag="90" stopTitle="1138 Bathurst St" stopTag="8157">
+  <direction title="South - 90c Vaughan towards Bathurst Station">
+  <prediction epochTime="1708233597883" seconds="276" minutes="4" isDeparture="false" branch="90C" dirTag="90_0_90CCon" vehicle="7101" block="90_3_30" tripTag="46859288" />
+  <prediction epochTime="1708234058853" seconds="737" minutes="12" isDeparture="false" affectedByLayover="true" branch="90C" dirTag="90_0_90CCon" vehicle="8308" block="90_2_20" tripTag="46859287" />
+  <prediction epochTime="1708234658853" seconds="1337" minutes="22" isDeparture="false" affectedByLayover="true" branch="90C" dirTag="90_0_90CCon" vehicle="7047" block="90_1_10" tripTag="46859318" />
+  <prediction epochTime="1708235258853" seconds="1937" minutes="32" isDeparture="false" affectedByLayover="true" branch="90C" dirTag="90_0_90CCon" vehicle="8391" block="90_5_50" tripTag="46859317" />
+  <prediction epochTime="1708235858853" seconds="2537" minutes="42" isDeparture="false" affectedByLayover="true" branch="90C" dirTag="90_0_90CCon" vehicle="7101" block="90_3_30" tripTag="46859316" />
+  </direction>
+</predictions>
+<predictions agencyTitle="Toronto Transit Commission" routeTitle="307-Bathurst Night Bus" routeTag="307" stopTitle="1138 Bathurst St" stopTag="8157" dirTitleBecauseNoPredictions="South - 307 Bathurst towards Exhibition">
+</predictions>
+</body>
