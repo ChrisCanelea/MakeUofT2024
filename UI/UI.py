@@ -93,11 +93,12 @@ class MainWindow(QMainWindow):
 
         if int(display_text[-2:]) % 5 == 0:
             print(int(display_text[-2:]))
-            r = requests.get(BASE_URL + str(route_num) + ":" + start_location)
-            if r.content != b'Received':
-                exit()
-            r = requests.get(BASE_URL + "time")
-            substrings = r.content.decode('utf-8').split("\r\n")
+            # r = requests.get(BASE_URL + str(route_num) + ":" + start_location)
+            # if r.content != b'Received':
+            #     exit()
+            # r = requests.get(BASE_URL + "time")
+            # substrings = r.content.decode('utf-8').split("\r\n")
+            substrings = ['1054', '1894', '5922']
             
             # minutes_label = QLabel("Minutes: " + str(int(int(substrings[0]) / 60)))
             # seconds_label = QLabel("Seconds: " + str(int(substrings[0]) % 60))
