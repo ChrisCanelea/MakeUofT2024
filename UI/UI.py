@@ -81,13 +81,13 @@ class MainWindow(QMainWindow):
         self.body.setStyleSheet('font-size: 16pt; color: #333; padding: 0px;')
         self.body.setWordWrap(True)
 
-        self.time0_label = QLabel(str(int(int(substrings[0]) / 60)) + ":" + str(int(substrings[0]) % 60))
+        self.time0_label = QLabel(str(int(int(substrings[0]) / 60)) + ":" + f":{int(substrings[0]) % 60:02d} until arrival")
         self.time0_label.setAlignment(Qt.AlignCenter)
         self.time0_label.setStyleSheet('font-size: 16pt; color: #333; padding: 0px;')
-        self.time1_label = QLabel(str(int(int(substrings[1]) / 60)) + ":" + str(int(substrings[1]) % 60))
+        self.time1_label = QLabel(str(int(int(substrings[1]) / 60)) + ":" + f":{int(substrings[1]) % 60:02d} until arrival")
         self.time1_label.setAlignment(Qt.AlignCenter)
         self.time1_label.setStyleSheet('font-size: 14pt; color: #333; padding: 0px;')
-        self.time2_label = QLabel(str(int(int(substrings[2]) / 60)) + ":" + str(int(substrings[2]) % 60))
+        self.time2_label = QLabel(str(int(int(substrings[2]) / 60)) + ":" + f":{int(substrings[2]) % 60:02d} until arrival")
         self.time2_label.setAlignment(Qt.AlignCenter)
         self.time2_label.setStyleSheet('font-size: 12pt; color: #333; padding: 0px;')
 
@@ -211,23 +211,27 @@ class MainWindow(QMainWindow):
 
         current_time = QTime.currentTime()
         display_text = current_time.toString('hh:mm:ss')
-        self.time_label.setText(display_text)
 
-        if int(display_text[-2:]) % 5 == 0:
+        if int(display_text[-2:]) % 10 == 0:
+            self.time_label.setText(display_text)
             # print(int(display_text[-2:]))
             if should_start == True:
                 r1 = requests.get(BASE_URL + "$" + start_location)
                 if r1.content != b'Received':
                     exit()
-                # time.sleep(4)
+                time.sleep(2.5)
                 r2 = requests.get(BASE_URL + "result")
                 substrings = r2.content.decode('utf-8').split("\r\n")
+                substrings.remove("")
+                substrings.insert(len(substrings), "0")
+                substrings.insert(len(substrings), "0")
+                substrings.insert(len(substrings), "0")
                 # substrings = ['1054', '1894', '5922']
 
             print(substrings)
-            self.time0_label.setText(str(int(int(substrings[0]) / 60)) + ":" + str(int(substrings[0]) % 60))
-            self.time2_label.setText(str(int(int(substrings[2]) / 60)) + ":" + str(int(substrings[2]) % 60))
-            self.time1_label.setText(str(int(int(substrings[1]) / 60)) + ":" + str(int(substrings[1]) % 60))
+            self.time0_label.setText(str(int(int(substrings[0]) / 60)) + f":{int(substrings[0]) % 60:02d} until arrival")
+            self.time2_label.setText(str(int(int(substrings[2]) / 60)) + f":{int(substrings[1]) % 60:02d} until arrival")
+            self.time1_label.setText(str(int(int(substrings[1]) / 60)) + f":{int(substrings[2]) % 60:02d} until arrival")
 
             # print("minutes: " + str(int(int(substrings[0]) / 60)))
             # print("seconds: " + str(int(substrings[0]) % 60))
@@ -240,7 +244,7 @@ class MainWindow(QMainWindow):
         r1 = requests.get(BASE_URL + "&" + str(route_num))
         if r1.content != b'Received':
             exit()
-        # time.sleep(5)
+        time.sleep(2.5)
         # print(r.content.decode('utf-8'))
         r2 = requests.get(BASE_URL + "result")
         print(r2.content.decode('utf-8'))
