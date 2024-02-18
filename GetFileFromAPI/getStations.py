@@ -69,7 +69,7 @@ def checkBusId(busID):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 getSchedule.py <bus #>")
+        print("Usage: python3 getStations.py <bus #>")
         sys.exit(1)
     
     busID = sys.argv[1]
