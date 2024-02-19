@@ -1,5 +1,7 @@
 # MakeUofT 2024 - Team Threeaky Friday
 
+![Left to right: Laptop database, serially connected ESP8266 access point, wirelessly connected R-PI terminal fetching live data from database through server](https://github.com/ChrisCanelea/MakeUofT2024/blob/main/Pictures/readmepic.jpg?raw=true)
+
 Save time in the morning by being notified live of transit windows for your morning commutes, with optional connections for other peripheral devices and funtionalities, all in one place.
 
 Uses a Raspberry Pi as a main terminal and an ESP8266 connected serially to a database as a server/access point. Terminal as well as other devices can connect to the local access point and sent requests/queries to the server/database to retreive information or perform useful actions.
